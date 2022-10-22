@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    position: absolute;
 }
 
 .first-heading {
@@ -9,6 +10,17 @@ body {
     padding-left: 2.5vw;
     line-height: 14vh;
     
+}
+
+body > div {
+    background-image: url("media/aries14.jpg");
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+
 }
 
 .grey-background {
@@ -46,8 +58,12 @@ main {
     gap: 8vh;
 }
 
-li {
-    list-style-type: none;
+/*.best div div ul:nth-child(2) {
+    list-style-type: decimal;
+}*/
+
+.best div div h2 + ul {
+    list-style-type: decimal;
 }
 
 .song_list {
@@ -60,20 +76,37 @@ li {
     gap: 5px;*/
 }
 
-.first_page,
-.second_page {
-    background-color: lightskyblue;
-    color: bisque;
-    margin: 0px;
-    padding: 1.5vw 1vw 0px 2vw;
-    flex-grow: 1;
+
+.song_list div ul {
+    /*display: flex;
+    flex-direction: column;*/
+    padding-left: 1.3vw;
 }
 
-.first_page {
+.best .song_list > div {
+    background-color: rgb(67, 136, 175);
+    color: bisque;
+    margin: 0px;
+    padding: 0 0 1vh 1.5vw;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+article .song_list h2 {
+    font-size: 2vw;
+    /*display: flex;
+    justify-content: flex-start;*/
+
+}
+
+.best .song_list div:first-child {
     border-radius: 0px 0px 0px 3vh;
 }
 
-.second_page {
+.best .song_list div:last-child {
     border-radius: 0px 0px 3vh 0px;
 }
 
@@ -102,8 +135,6 @@ li {
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 2fr repeat(2, 1fr);
     gap: 1.5vw;
-
-    
 }
 
 .marked {
@@ -154,26 +185,97 @@ p {
     top: 2vh;
     right: 2vw; */
     grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    grid-row: 1 / 2; 
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    
+}
+.show_not_hover {
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
     
 }
 
 .show_hover {
-    height: 100%;
+    grid-row: 1;
     width: 100%;
-    display: none;
+    height: 100%;
 }
 
-.show_not_hover {
-    height: 100%;
-    width: 100%;
+.cover:hover .show_not_hover {
+    width: 0px;
+}
+
+.show_not_hover,
+.show_hover {
+    border-radius: 3vh 3vh 0px 0px; 
     object-fit: cover;
-    border-radius: 3vh 3vh 0px 0px;
-    
 }
 
 .anecdotes {
     grid-column: 1 / span 2;
     grid-row: 3 / 4;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 2fr repeat(2, 1fr);
+    gap: 0.5vw;
+}
+
+.anecdotes li:not(.empty) {
+    background-color: bisque;
+    padding: 1.7vw;
+    color: rgb(86, 167, 243);
+    display: flex;
+    align-items: center;
+}
+
+.anecdotes .bottom_right_90 {
+   border-radius: 3vh 3vh 0vh 3vh;
+}
+
+.anecdotes .top_right_90 {
+    border-radius: 3vh 0vh 3vh 3vh;
+}
+
+#are_you_experienced .anecdotes .image_1 {
+    border-radius: 0vh 3vh 3vh 3vh;
+    align-items: flex-end;
+    background-image: url("media/aries08.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.anecdotes li:nth-child(2) {
+   
+}
+
+.anecdotes .tablet_empty,
+.phone_empty {
+    display: none;
+}
+
+.anecdotes .two_wide {
+   border-radius: 3vh 3vh 3vh 0vh;
+}
+
+article > ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.album_data div + div,
+.song_list,
+.anecdotes {
+    font-family: "Barlow Condensed";
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.album_data div + div {
+    color: white;
 }
 
