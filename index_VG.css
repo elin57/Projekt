@@ -1,6 +1,5 @@
 body {
     margin: 0px;
-    position: absolute;
 
     --font_size: 1.5vw;
 }
@@ -8,17 +7,17 @@ body {
 header h1 {
     font-family: "Bungee Shade";
     color: white;
-    font-size: calc(5 * var(--font_size));
+    font-size: calc(6.5 * var(--font_size));
     padding-left: 2.5vw;
-    padding-top: 2vh;
-    line-height: 14vh; 
+    padding-top: 2.8vh;
+    line-height: 21vh; 
 }
 
 body > div {
-    background-image: url("./media/aries14.jpg");
+    background-image: url("media/aries29.jpg");
     position: fixed;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
@@ -88,7 +87,7 @@ main {
 
 #axis_bold_as_love .song_list > div {
     background-color: green;
-    color: rgb(249, 172, 99);
+    color: rgb(252, 157, 69);
 }
 
 article .song_list h2 {
@@ -117,6 +116,7 @@ article .song_list h2 {
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 2fr repeat(2, 1fr);
     gap: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .marked {
@@ -137,7 +137,7 @@ footer {
 .album_data div h1 {
     font-family: "Bungee Outline";
     color: white;
-    font-size: calc(2 * var(--font_size));
+    font-size: calc(2.7 * var(--font_size));
     line-height: 8vh;
 }
 
@@ -197,6 +197,7 @@ p {
     right: 0;
     
 }
+
 .cover:hover .show_hover {
     z-index: 2;
 }
@@ -221,7 +222,7 @@ p {
 .anecdotes li:not(.empty) {
     background-color: bisque;
     padding: 1.7vw;
-    color: rgb(86, 167, 243);
+    color: black;
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -229,7 +230,7 @@ p {
 
 #axis_bold_as_love .anecdotes li:not(.empty) {
     background-color: rgb(150, 183, 186);
-    color: rgb(4, 118, 4);
+    color: rgb(235, 235, 72);
 }
 
 .anecdotes .bottom_right_90 {
@@ -243,7 +244,7 @@ p {
 #are_you_experienced .anecdotes .image_1 {
     border-radius: 0vh 3vh 3vh 3vh;
     align-items: flex-end;
-    background-image: url("./media/aries08.jpg");
+    background-image: url("media/aries08.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -270,9 +271,8 @@ p {
 }
 
 #axis_bold_as_love .anecdotes .image_1 {
-    background-image: url("./media/aries13.jpg");
+    background-image: url("media/aries16.jpg");
     background-size: cover;
-    background-position: center;
     display: flex;
     align-items: flex-end;
     border-radius: 0px 3vh 3vh 3vh;
@@ -283,6 +283,12 @@ article > ul,
     list-style-type: none;
     margin: 0px;
     padding: 0px;
+}
+
+#are_you_experienced .song_list div:nth-child(2) ul li:nth-child(4),
+#are_you_experienced .song_list div:nth-child(2) ul li:nth-child(5),
+.song_list div:nth-child(2) ul li:nth-child(6) {
+    list-style-type: none;
 }
 
 .album_data div p + ul {
@@ -411,7 +417,6 @@ article > ul,
     .show_not_hover,
     .show_hover {
         border-radius: 3vh 0px 0px 3vh; 
-
     }
 
     .best .song_list div:first-child {
@@ -430,12 +435,17 @@ article > ul,
         margin: 22vh 5vw 12vh 5vw;
     }
 
+    .album_data div:nth-child(2) {
+        padding: 3vh;
+        padding-left: 0;
+    }
+
     /*Teckenstorlekar nedan*/
     header h1 {
-        font-size: calc(8 * var(--font_size)); 
-        line-height: 15.8vh;
+        font-size: calc(10 * var(--font_size)); 
         text-align: center;
-        padding: 0;
+        padding-top: 2.5vh;
+        line-height: 16vh;
     }
 
     nav div {
@@ -456,30 +466,31 @@ article > ul,
     }
 
     .album_data div h1 {
-        font-size: calc(3.6 * var(--font_size));
+        font-size: calc(4 * var(--font_size));
         line-height: 7vh;
     }
     
     .album_data div h2 {
-        font-size: calc(3 * var(--font_size));
+        font-size: calc(2.8 * var(--font_size));
     }
 
     .album_data div + div,
     .song_list,
     .anecdotes {
-        font-size: calc(1.8 * var(--font_size));
+        font-size: calc(2 * var(--font_size));
     }
 
     footer {
-        font-size: calc(1.5 * var(--font_size)); 
+        font-size: calc(2 * var(--font_size)); 
     }
+
 }
 
 @media (max-width: 500px) {
     .best {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1.1fr 0.4fr 1.1fr 1fr;
+        grid-template-rows: 1fr 0.4fr 1fr 1fr;
     }
 
     #are_you_experienced {
@@ -573,10 +584,11 @@ article > ul,
 
     /*Teckenstorlekar nedan*/
     header h1 {
-        font-size: calc(9 * var(--font_size)); 
+        font-size: calc(11 * var(--font_size)); 
         line-height: 14vh;
         text-align: center;
         padding: 0;
+        padding-top: 2vh;
         margin: 0;
     }
 
@@ -599,8 +611,8 @@ article > ul,
     }
 
     .album_data div h1 {
-        font-size: calc(5.5 * var(--font_size));
-        line-height: 8vh;
+        font-size: calc(5 * var(--font_size));
+        line-height: 6.5vh;
     }
     
     .album_data div h2 {
