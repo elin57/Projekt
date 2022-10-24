@@ -9,6 +9,7 @@ header h1 {
     color: white;
     font-size: calc(6.5 * var(--font_size));
     padding-left: 2.5vw;
+    padding-right: 2.5vw;
     padding-top: 2.8vh;
     line-height: 21vh; 
 }
@@ -308,7 +309,7 @@ article > ul,
 
 @media (max-width: 900px) and (min-width: 801px) {
     header h1 {
-        font-size: 62px; 
+        font-size: 80px; 
     }
 
     nav div {
@@ -320,11 +321,11 @@ article > ul,
     }
 
     .album_data div h1 {
-        font-size: 25px;
+        font-size: 35px;
     }
     
     .album_data div h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .album_data div + div,
@@ -442,7 +443,7 @@ article > ul,
 
     /*Teckenstorlekar nedan*/
     header h1 {
-        font-size: calc(10 * var(--font_size)); 
+        font-size: calc(9 * var(--font_size)); 
         text-align: center;
         padding-top: 2.5vh;
         line-height: 16vh;
