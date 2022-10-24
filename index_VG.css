@@ -1,15 +1,17 @@
 body {
     margin: 0px;
     position: absolute;
+
+    --font_size: 1.5vw;
 }
 
 header h1 {
     font-family: "Bungee Shade";
     color: white;
-    font-size: 7vw;
+    font-size: calc(5 * var(--font_size));
     padding-left: 2.5vw;
-    line-height: 14vh;
-    
+    padding-top: 2vh;
+    line-height: 14vh; 
 }
 
 body > div {
@@ -21,7 +23,6 @@ body > div {
     height: 100%;
     width: 100%;
     overflow-y: scroll;
-
 }
 
 body > div > div {
@@ -34,17 +35,17 @@ nav {
     display: flex;
     margin: 11vh 2vw 12vh 2vw;
     gap: 0.5vw;
-
 }
 
 nav div {
     flex-grow: 1;
+    flex-basis: 1vw;
     background-color: rgb(255, 255, 255, 0.5);
     text-align: center;
-    padding: 4vh 5vw;
+    padding: 2vw;
     border-radius: 2vh;
     font-family: "Barlow Semi Condensed";
-    font-size: 2vw;
+    font-size: calc(0.5vw + var(--font_size));
 }
 
 nav div:hover:not(.marked) {
@@ -59,10 +60,6 @@ main {
     gap: 8vh;
 }
 
-/*.best div div ul:nth-child(2) {
-    list-style-type: decimal;
-}*/
-
 .best div div h2 + ul {
     list-style-type: decimal;
 }
@@ -72,15 +69,9 @@ main {
     grid-row: 2 / 3;
     display: flex;
     gap: 1.5vw;
-    /*display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;*/
 }
 
-
 .song_list div ul {
-    /*display: flex;
-    flex-direction: column;*/
     padding-left: 1.3vw;
 }
 
@@ -101,10 +92,7 @@ main {
 }
 
 article .song_list h2 {
-    font-size: 2vw;
-    /*display: flex;
-    justify-content: flex-start;*/
-
+    font-size: calc(0.5vw + var(--font_size));
 }
 
 .best .song_list div:first-child {
@@ -115,26 +103,16 @@ article .song_list h2 {
     border-radius: 0px 0px 3vh 0px;
 }
 
-/*.first_page {
-    grid-column: 1;
-}
-
-.second_page {
-    grid-column: 2;
-}*/
-
 .song_list div h2 + ul {
     margin: 0px;
 }
 
-/*classer (och id) som redan fanns är nedanför*/
 .best {
     margin-right: 3vw;
     margin-left: 3vw;
     padding: 2vw;
-    border-radius: 20px;
+    border-radius: 3vh;
     border: 1px solid white;
-    /*position: relative;*/
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 2fr repeat(2, 1fr);
@@ -144,30 +122,29 @@ article .song_list h2 {
 .marked {
     border: 1px solid white;
     font-weight: bold;
-    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.7);
-    /* 1px 1px 5px 2px istället?*/
+    box-shadow: 1px 1px 5px 1px white;
 }
 
 footer {
     margin: 10vh 0vw 0vh 2vw;
     padding-bottom: 3vh;
     color: white;
-    font-family: "Barlow Condensed"
+    font-family: "Barlow Condensed";
+    font-size: var(--font_size);
     
 }
 
 .album_data div h1 {
     font-family: "Bungee Outline";
     color: white;
-    font-size: 3vw;
-    line-height: 7vh;
+    font-size: calc(2 * var(--font_size));
+    line-height: 8vh;
 }
 
 .album_data div h2 {
     font-family: "Barlow Semi Condensed";
-    font-size: 2vw;
+    font-size: calc(1vw + var(--font_size));
     color: white;
-    line-height: 4vh;
 }
 
 .album_data {
@@ -187,14 +164,8 @@ p {
 
 .cover {
     position: relative;
-    /*top: 2vh;
-    right: 2vw; */
     grid-column: 2 / 3;
     grid-row: 1 / 2; 
-   /* display: grid;*/
-    /*grid-template-rows: 1fr;
-    grid-template-columns: 1fr;  */  
-    /*display: flex;*/
 }
 
 .show_not_hover {
@@ -203,14 +174,13 @@ p {
     object-fit: cover;
     transition-property: opacity;
     transition-duration: 1.5s;
-    /*opacity: 1;*/
+    opacity: 1;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 1;
-    
 }
 
 .show_hover {
@@ -218,10 +188,6 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /*visibility: collapse;*/
-    /*transition-property: opacity;
-    transition-duration: 2s;*/
-    /*opacity: 1;*/
     transition-property: z-index;
     transition-duration: 2.5s;
     z-index: 0;
@@ -238,20 +204,6 @@ p {
 .cover:hover .show_not_hover {
     opacity: 0;
 }
-/*.cover:hover .show_hover {
-    opacity: 1;
-    /*visibility: visible;
-}
-
-.cover:hover .show_not_hover {
-    opacity: 0;
-   /* visibility: collapse;
-}*/
-
-/*.cover:hover .show_not_hover {
-    width: 0px; opacity: 0 med 
-    transition-property?
-}*/
 
 .show_not_hover,
 .show_hover {
@@ -272,11 +224,12 @@ p {
     color: rgb(86, 167, 243);
     display: flex;
     align-items: center;
+    font-weight: bold;
 }
 
 #axis_bold_as_love .anecdotes li:not(.empty) {
     background-color: rgb(150, 183, 186);
-    color: black;
+    color: rgb(4, 118, 4);
 }
 
 .anecdotes .bottom_right_90 {
@@ -317,25 +270,30 @@ p {
 }
 
 #axis_bold_as_love .anecdotes .image_1 {
-    background-image: url("./media/aries12.jpg");
+    background-image: url("./media/aries13.jpg");
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: flex-end;
     border-radius: 0px 3vh 3vh 3vh;
 }
 
-article > ul {
+article > ul,
+.album_data div p + ul {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
+}
+
+.album_data div p + ul {
+    padding-left: 4vw;
 }
 
 .album_data div + div,
 .song_list,
 .anecdotes {
     font-family: "Barlow Condensed";
-    font-size: 1.5vw;
-    font-weight: bold;
+    font-size: var(--font_size);
 }
 
 .album_data div + div {
@@ -343,7 +301,35 @@ article > ul {
 }
 
 @media (max-width: 900px) and (min-width: 801px) {
-   
+    header h1 {
+        font-size: 62px; 
+    }
+
+    nav div {
+        font-size: 16px;
+    }
+
+    article .song_list h2 {
+        font-size: 17px;
+    }
+
+    .album_data div h1 {
+        font-size: 25px;
+    }
+    
+    .album_data div h2 {
+        font-size: 20px;
+    }
+
+    .album_data div + div,
+    .song_list,
+    .anecdotes {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 16px; 
+    }
 }
 
 @media (max-width: 800px) and (min-width: 501px) {
@@ -351,6 +337,10 @@ article > ul {
         display: grid;
         grid-template-columns: 1.5fr 1fr;
         grid-template-rows: repeat(3, 1fr);
+    }
+
+    #are_you_experienced {
+        margin-bottom: -2vh;
     }
 
     .album_data {
@@ -377,7 +367,7 @@ article > ul {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr 1fr;
-        gap: 0.5vw;
+        gap: 1vw;
     }
     #are_you_experienced .anecdotes .image {
         grid-column: 2;
@@ -397,12 +387,6 @@ article > ul {
         display: grid;
         grid-column: 1;
         grid-row: 2;
-    }
-
-    header h1 {
-        text-align: center;
-        padding: 0;
-        line-height: auto;
     }
 
     #axis_bold_as_love .anecdotes .bottom_left_90 {
@@ -427,6 +411,7 @@ article > ul {
     .show_not_hover,
     .show_hover {
         border-radius: 3vh 0px 0px 3vh; 
+
     }
 
     .best .song_list div:first-child {
@@ -440,13 +425,65 @@ article > ul {
     #axis_bold_as_love .anecdotes .tablet_empty {
         display: grid;
     }
+
+    body > div > div {
+        margin: 22vh 5vw 12vh 5vw;
+    }
+
+    /*Teckenstorlekar nedan*/
+    header h1 {
+        font-size: calc(8 * var(--font_size)); 
+        line-height: 15.8vh;
+        text-align: center;
+        padding: 0;
+    }
+
+    nav div {
+        font-size: calc(2 * var(--font_size));
+    }
+
+    article .song_list h2 {
+        font-size: calc(3 * var(--font_size));
+    }
+
+    .song_list div ul {
+        padding-left: 2.5vw;
+    }
+    
+    .best .song_list > div {
+        padding: 3vw;  
+        padding-top: 2.5vw;
+    }
+
+    .album_data div h1 {
+        font-size: calc(3.6 * var(--font_size));
+        line-height: 7vh;
+    }
+    
+    .album_data div h2 {
+        font-size: calc(3 * var(--font_size));
+    }
+
+    .album_data div + div,
+    .song_list,
+    .anecdotes {
+        font-size: calc(1.8 * var(--font_size));
+    }
+
+    footer {
+        font-size: calc(1.5 * var(--font_size)); 
+    }
 }
 
 @media (max-width: 500px) {
     .best {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 2fr repeat(3, 1fr);
+        grid-template-rows: 1.1fr 0.4fr 1.1fr 1fr;
+    }
+
+    #are_you_experienced {
+        margin-bottom: -4vh;
     }
 
     .album_data {
@@ -472,19 +509,12 @@ article > ul {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr 1fr;
-        gap: 0.5vw;
+        gap: 1vw;
     }
 
     body > div > div {
         margin: 0;
         border-radius: 0;
-    }
-
-    header h1 {
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        line-height: auto;
     }
 
     #are_you_experienced .anecdotes .phone_empty {
@@ -524,6 +554,67 @@ article > ul {
     #axis_bold_as_love .anecdotes .bottom_right_90 {
         grid-column: 3;
         grid-row: 2;
+    }
+
+    .album_data div:nth-child(2) {
+        padding: 7vh;
+        padding-left: 0;
+    }
+
+    .album_data div p + ul {
+        padding-left: 6vw;
+    }
+
+    .show_not_hover,
+    .show_hover {
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /*Teckenstorlekar nedan*/
+    header h1 {
+        font-size: calc(9 * var(--font_size)); 
+        line-height: 14vh;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav div {
+        font-size: calc(2.2 * var(--font_size));
+        padding: 3vw;
+    }
+
+    article .song_list h2 {
+        font-size: calc(4 * var(--font_size));
+    }
+
+    .song_list div ul {
+        padding-left: 2.5vw;
+    }
+    
+    .best .song_list > div {
+        padding: 3vw;  
+        padding-top: 2.5vw;
+    }
+
+    .album_data div h1 {
+        font-size: calc(5.5 * var(--font_size));
+        line-height: 8vh;
+    }
+    
+    .album_data div h2 {
+        font-size: calc(3.7 * var(--font_size));
+    }
+
+    .album_data div + div,
+    .song_list,
+    .anecdotes {
+        font-size: calc(2.5 * var(--font_size));
+    }
+
+    footer {
+        font-size: calc(2.2 * var(--font_size)); 
     }
 }
 
